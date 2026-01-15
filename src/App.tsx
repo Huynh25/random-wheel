@@ -14,7 +14,7 @@ function App() {
   const [items, setItems] = useState<string[]>([
     'Trâm Anh', 'Huỳnh Anh', 'Thiên Ân', 'Gia Bảo', 'Nhật Hào', 'Ngọc Hân',
     'Hồng Hoa', 'Khả Hân', 'Bảo Hân', 'Gia Hùng', 'Hoàng Khang', 'Ngô Khôi',
-    'Nguyễn Khôi', 'Quốc Khôi', 'Hoài Lâm', 'Thảo Mỹ', 'Khánh My', 'Phương Nhi',
+    'Nguyễn Khôi', 'Quốc Khôi', 'Hoài Lâm', 'Thảo My', 'Khánh My', 'Phương Nhi',
     'Minh Nhựt', 'Lộc Phát', 'Tấn Phát', 'Phước Thịnh', 'Ngọc Quí', 'Tùng Quân',
     'Thiện Tâm', 'Quốc Tiến', 'Phương Trinh', 'Phương Trúc', 'Hồng Trung', 'Đa Vin',
     'Quốc Vĩ', 'Tường Vy', 'Ngọc Như Ý', 'Như Ý'
