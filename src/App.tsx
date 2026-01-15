@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef } from 'react'
 import './App.css'
 import Wheel from './components/Wheel'
 import DataInput from './components/DataInput'

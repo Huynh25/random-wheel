@@ -9,7 +9,7 @@ interface WheelProps {
 }
 
 const Wheel = forwardRef<HTMLCanvasElement, WheelProps>(
-    ({ items, selectedIndex, isSpinning, onSpin }, ref) => {
+    ({ items, selectedIndex, isSpinning, onSpin }) => {
         const canvasRef = useRef<HTMLCanvasElement>(null)
         const rotationRef = useRef(0)
         const animationRef = useRef<number | null>(null)
