@@ -12,12 +12,12 @@ interface HistoryItem {
 
 function App() {
   const [items, setItems] = useState<string[]>([
-    'Trầm Anh', 'Huỳnh Anh', 'Thiên Ân', 'Gia Bảo', 'Nhật Hào', 'Ngọc Hảo',
+    'Trâm Anh', 'Huỳnh Anh', 'Thiên Ân', 'Gia Bảo', 'Nhật Hào', 'Ngọc Hân',
     'Hồng Hoa', 'Khả Hân', 'Bảo Hân', 'Gia Hùng', 'Hoàng Khang', 'Ngô Khôi',
-    'Nguyễn Khôi', 'Quốc Khôi', 'Hoài Lâm', 'Thảo Mỹ', 'Khánh Mỹ', 'Phương Nhi',
-    'Minh Nhật', 'Lộc Phát', 'Tấn Phát', 'Phước Thịnh', 'Ngọc Qůi', 'Tùng Quân',
-    'Thiên Tâm', 'Quốc Tiến', 'Phương Trình', 'Phương Trúc', 'Hồng Trung', 'Đạ Vin',
-    'Quốc Vĩ', 'Tường Vy', 'Ngọc Như Ỷ', 'Như Ý'
+    'Nguyễn Khôi', 'Quốc Khôi', 'Hoài Lâm', 'Thảo Mỹ', 'Khánh My', 'Phương Nhi',
+    'Minh Nhựt', 'Lộc Phát', 'Tấn Phát', 'Phước Thịnh', 'Ngọc Quí', 'Tùng Quân',
+    'Thiện Tâm', 'Quốc Tiến', 'Phương Trinh', 'Phương Trúc', 'Hồng Trung', 'Đa Vin',
+    'Quốc Vĩ', 'Tường Vy', 'Ngọc Như Ý', 'Như Ý'
   ])
   const [isSpinning, setIsSpinning] = useState(false)
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
