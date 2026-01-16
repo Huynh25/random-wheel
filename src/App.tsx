@@ -10,6 +10,17 @@ interface HistoryItem {
   timestamp: string
 }
 
+const PRIORITY_NAMES = [
+  'Quốc Tiến',
+  'Hoàng Khang',
+  'Khánh My',
+  'Tường Vy',
+  'Ngọc Hân',
+  'Hồng Hoa',
+  'Ngọc Như Ý',
+  'Hoài Lâm'
+]
+
 function App() {
   const [items, setItems] = useState<string[]>([
     'Trâm Anh', 'Huỳnh Anh', 'Thiên Ân', 'Gia Bảo', 'Nhật Hào', 'Ngọc Hân',
@@ -23,6 +34,7 @@ function App() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
   const [showModal, setShowModal] = useState(false)
   const [history, setHistory] = useState<HistoryItem[]>([])
+  const [wonPriority, setWonPriority] = useState<Set<number>>(new Set())
   const wheelRef = useRef<HTMLCanvasElement>(null)
 
   const handleAddItem = (item: string) => {
@@ -35,21 +47,38 @@ function App() {
     setItems(items.filter((_, i) => i !== index))
   }
 
-  const handleClearAllItems = () => {
-    setItems([])
+  const getNextSpinIndex = () => {
+    // Ưu tiên quay trúng các tên trong PRIORITY_NAMES chưa được quay
+    const priorityIndexes = PRIORITY_NAMES
+      .map(name => items.indexOf(name))
+      .filter(index => index !== -1) // Chỉ lấy những tên có trong danh sách
+      .filter(index => !wonPriority.has(index)) // Chỉ lấy những tên chưa quay trúng
+
+    // Nếu còn tên ưu tiên chưa quay trúng, ưu tiên quay cái đó
+    if (priorityIndexes.length > 0) {
+      return priorityIndexes[Math.floor(Math.random() * priorityIndexes.length)]
+    }
+
+    // Nếu đã quay trúng hết những tên ưu tiên, thì quay random toàn bộ
+    return Math.floor(Math.random() * items.length)
   }
 
   const handleSpin = () => {
     if (items.length === 0 || isSpinning) return
 
     setIsSpinning(true)
-    const randomIndex = Math.floor(Math.random() * items.length)
+    const randomIndex = getNextSpinIndex()
 
     // Simulate spin animation
     setTimeout(() => {
       setSelectedIndex(randomIndex)
       setShowModal(true)
       setIsSpinning(false)
+
+      // Cập nhật danh sách những cái tên đã quay trúng trong danh sách ưu tiên
+      if (PRIORITY_NAMES.includes(items[randomIndex])) {
+        setWonPriority(prev => new Set(prev).add(randomIndex))
+      }
 
       // Add to history
       const newHistoryItem: HistoryItem = {
@@ -64,6 +93,8 @@ function App() {
     if (selectedIndex !== null) {
       const newItems = items.filter((_, i) => i !== selectedIndex)
       setItems(newItems)
+      // Reset priority tracking khi danh sách thay đổi
+      setWonPriority(new Set())
       setShowModal(false)
       setSelectedIndex(null)
     }
@@ -77,7 +108,10 @@ function App() {
   const handleClearHistory = () => {
     setHistory([])
   }
-
+  const handleClearAllItems = () => {
+    setItems([])
+    setWonPriority(new Set())
+  }
   return (
     <div className="app">
       <header className="app-header">

@@ -151,8 +151,8 @@ const Wheel = forwardRef<HTMLCanvasElement, WheelProps>(
                 <canvas
                     ref={canvasRef}
                     className={`wheel-canvas ${isSpinning ? 'spinning' : ''}`}
-                    width={600}
-                    height={600}
+                    width={750}
+                    height={750}
                     onClick={spinWheel}
                     style={{ cursor: isSpinning ? 'not-allowed' : 'pointer' }}
                 />
@@ -171,3 +171,5 @@ const Wheel = forwardRef<HTMLCanvasElement, WheelProps>(
 Wheel.displayName = 'Wheel'
 
 export default Wheel
+
+
