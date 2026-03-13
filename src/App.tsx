@@ -11,24 +11,50 @@ interface HistoryItem {
 }
 
 const PRIORITY_NAMES = [
-  'Quốc Tiến',
-  'Hoàng Khang',
-  'Khánh My',
-  'Tường Vy',
+  'Hoàn Châu',
+  'Quốc Bảo',
+  'Như Quỳnh',
+  'Kim Ngân',
+  'Minh Sang',
   'Ngọc Hân',
-  'Hồng Hoa',
-  'Ngọc Như Ý',
-  'Hoài Lâm'
+  'Huỳnh Thy',
+  'Trọng Quý',
+  'Thiên Ngân',
+  'Yến Vy',
+  'Thiên Quảng',
+  'Thảo My',
+  'Tố Quyên'
 ]
 
 function App() {
   const [items, setItems] = useState<string[]>([
-    'Trâm Anh', 'Huỳnh Anh', 'Thiên Ân', 'Gia Bảo', 'Nhật Hào', 'Ngọc Hân',
-    'Hồng Hoa', 'Khả Hân', 'Bảo Hân', 'Gia Hùng', 'Hoàng Khang', 'Ngô Khôi',
-    'Nguyễn Khôi', 'Quốc Khôi', 'Hoài Lâm', 'Thảo My', 'Khánh My', 'Phương Nhi',
-    'Minh Nhựt', 'Lộc Phát', 'Tấn Phát', 'Minh Khôi', 'Ngọc Quí', 'Tùng Quân',
-    'Quốc Tiến', 'Quốc Tiến', 'Phương Trinh', 'Phương Trúc', 'Hồng Trung', 'Đa Vin',
-    'Quốc Vĩ', 'Tường Vy', 'Ngọc Như Ý', 'Như Ý'
+    'Hoàn Châu',
+    'Thảo Vy',
+    'Quốc Bảo',
+    'Văn Thành',
+    'Uyển Đình',
+    'Như Quỳnh',
+    'Bảo Khiêm',
+    'Trường Thọ',
+    'Kim Ngân',
+    'Minh Sang',
+    'Ngọc Hân',
+    'Bảo Trân',
+    'Huỳnh Thy',
+    'Gia Uyên',
+    'Hữu Dự',
+    'Trọng Quý',
+    'Phương Nghi',
+    'Minh Anh',
+    'Thiên Ngân',
+    'Nhựt Khôi',
+    'Hữu Dự',
+    'Yến Vy',
+    'Kim Chi',
+    'Thành An',
+    'Thiên Quảng',
+    'Thảo My',
+    'Tố Quyên'
   ])
   const [isSpinning, setIsSpinning] = useState(false)
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
