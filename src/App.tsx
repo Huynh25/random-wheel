@@ -12,18 +12,9 @@ interface HistoryItem {
 
 const PRIORITY_NAMES = [
   'Hoàn Châu',
-  'Quốc Bảo',
   'Như Quỳnh',
-  'Kim Ngân',
-  'Minh Sang',
-  'Ngọc Hân',
   'Huỳnh Thy',
-  'Trọng Quý',
-  'Thiên Ngân',
-  'Yến Vy',
-  'Thiên Quảng',
-  'Thảo My',
-  'Tố Quyên'
+  'Yến Vy'
 ]
 
 function App() {
